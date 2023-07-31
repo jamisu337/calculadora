@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="main">
+
+        <form action="" name="calculadora" id="calculadora">
+            <div class="col">
+                <input type="text" name="display_end" class="disp display_end" disabled><br>
+                <input type="text" name="display" class="disp display" disabled><br>
+            </div>
+            <div class="col_btn">
+                <input type="button" name="btn_exp" value="x^2" class="btn" onclick="exponenciacao()">
+                <input type="button" name="btn_ce" value="CE" class="btn" onclick="limparDisplay()">
+                <input type="button" name="btn_ac" value="AC" class="btn" onclick="location.reload()">
+                <input type="button" name="btn_div" value="/" class="btn operador" onclick="add(btn_div.value)"><br>
+
+            </div>
+            <div class="col_btn">
+                <input type="button" name="btn_7" value="7" class="btn" onclick="add(btn_7.value)">
+                <input type="button" name="btn_8" value="8" class="btn" onclick="add(btn_8.value)">
+                <input type="button" name="btn_9" value="9" class="btn" onclick="add(btn_9.value)">
+                <input type="button" name="btn_mult" value="*" class="btn operador" onclick="add(btn_mult.value)"><br>
+
+            </div>
+            <div class="col_btn">
+                <input type="button" name="btn_4" value="4" class="btn" onclick="add(btn_4.value)">
+                <input type="button" name="btn_5" value="5" class="btn" onclick="add(btn_5.value)">
+                <input type="button" name="btn_6" value="6" class="btn" onclick="add(btn_6.value)">
+                <input type="button" name="btn_sub" value="-" class="btn operador" onclick="add(btn_sub.value)"><br>
+
+            </div>
+            <div class="col_btn">
+                <input type="button" name="btn_1" value="1" class="btn" onclick="add(btn_1.value)">
+                <input type="button" name="btn_2" value="2" class="btn" onclick="add(btn_2.value)">
+                <input type="button" name="btn_3" value="3" class="btn" onclick="add(btn_3.value)">
+                <input type="button" name="btn_adi" value="+" class="btn operador" onclick="add(btn_adi.value)"><br>
+
+            </div>
+            <div class="col_btn">
+                <input type="button" name="btn_0" value="0" class="btn" onclick="add(btn_0.value)">
+                <input type="button" name="btn_pont" value="." class="btn" onclick="add(btn_pont.value)">
+                <input type="button" name="btn_back" value="b" class="btn" onclick="backspace()">
+                <input type="button" name="btn_res" value="=" class="btn calc" onclick="calcular()">
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
