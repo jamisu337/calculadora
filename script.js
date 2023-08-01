@@ -1,12 +1,21 @@
 function add(n1) {
     const display = calculadora.display;
     const display_end = calculadora.display_end;
+    const numeros_display = calculadora.display.value.length
 
     const Operadores = ['+', '-', '*', '/']
 
-    
-    if(validaroparedores(n1)){
+    if(numeros_display > 11){
+        if(Operadores.includes(n1)){
             display.value += n1;
+            display_end.value = display_end.value + display.value;
+            display.value = ""
+        }
+        return true
+    }
+
+    if(validaroparedores(n1)){
+        display.value += n1;
     }
 
     if(Operadores.includes(n1)){
@@ -28,7 +37,8 @@ function validaroparedores(n1) {
         }
 
         if(display_end.value === '' && display.value === ''){
-            display.value += "0";
+            display.value += "0" + n1;
+            return false
         }
 
         if (display.value === ''){
@@ -36,6 +46,7 @@ function validaroparedores(n1) {
         }
 
     }
+
 
     if (display.value === '' || display.value === '0') {
         if (n1 === '.') {
@@ -49,6 +60,12 @@ function validaroparedores(n1) {
             }
 
         }
+
+        if(display.value === '0'){
+            display.value += n1;
+            return false
+        }
+
         display.value = n1;
         return false
     }
@@ -60,7 +77,7 @@ function validaroparedores(n1) {
     }
 
     display.value += n1
- 
+
 }
 
 
